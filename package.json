@@ -5,15 +5,14 @@
     "author": "Chris Zubak-Skees",
     "private": true,
     "scripts": {
-        "aws-push": "aws s3 sync --acl public-read --cache-control max-age=120,public ./dist/ s3://internetpoints.me/$npm_package_name/",
+        "aws-push": "aws s3 sync --acl public-read --cache-control max-age=120,public ./dist/ s3://internetpoints.me/",
         "build": "nuxt build",
         "dev": "nuxt",
         "generate": "nuxt generate",
-        "github-setup": "echo 'GitHub user name: \\c' && read user && curl -u $user https://api.github.com/orgs/PublicI/repos -d '{\"name\":\"'$npm_package_name'\",\"private\":true}' && git remote add origin 'https://github.com/PublicI/'$npm_package_name'.git'",
         "heroku-postbuild": "npm run build",
         "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "precommit": "npm run lint",
-        "push": "s3-deploy './dist/**' --cwd './dist/' --bucket internetpoints.me --gzip --filePrefix $npm_package_name --cache 120",
+        "push": "s3-deploy './dist/**' --cwd './dist/' --bucket internetpoints.me --cache 120",
         "start": "nuxt start"
     },
     "dependencies": {
