@@ -33,8 +33,18 @@ module.exports = {
             {
                 id: 'UA-XXXXXXX-X'
             }
-        ]
+        ],
+        '@nuxtjs/auth'
     ],
+    auth: {
+        strategies: {
+            facebook: {
+                client_id: '212961189656676',
+                userinfo_endpoint: 'https://graph.facebook.com/v2.12/me?fields=about,name,picture{url}',
+                scope: ['public_profile']
+            }
+        }
+    },
     axios: {
         baseURL: process.server
             ? `http://${process.env.HOST || 'localhost'}:${process.env.PORT ||
