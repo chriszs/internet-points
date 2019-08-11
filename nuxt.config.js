@@ -1,6 +1,7 @@
 const pkg = require('./package.json');
 
 module.exports = {
+    buildDir: 'public',
     /*
      ** Headers of the page
      */

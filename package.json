@@ -4,7 +4,6 @@
     "description": "",
     "author": "Chris Zubak-Skees",
     "private": true,
-    "buildDir": "public",
     "scripts": {
         "aws-push": "aws s3 sync --acl public-read --cache-control max-age=120,public ./dist/ s3://internetpoints.me/",
         "build": "nuxt build",
